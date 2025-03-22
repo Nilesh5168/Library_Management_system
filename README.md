@@ -43,6 +43,12 @@ Setup Instructions:
    
 •	python manage.py runserver
 
+8)Clone the Repository
+
+•	git clone https://github.com/your-username/library-management.git
+
+•	cd library-management
+
 
 
 📁 Project Structure
