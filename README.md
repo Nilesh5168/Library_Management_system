@@ -45,8 +45,7 @@ Setup Instructions:
 
 8)Clone the Repository
 
-•	git clone https://github.com/your-username/library-management.git
-
+•	git clone https://github.com/Nilesh5168/Library_Management_system.git
 •	cd library-management
 
 
