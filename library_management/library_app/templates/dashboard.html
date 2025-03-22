@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Admin Dashboard</h1>
+
+    <h2>Add New Book</h2>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="title" placeholder="Title" required>
+        <input type="text" name="author" placeholder="Author" required>
+        <input type="text" name="isbn" placeholder="ISBN" required>
+        <input type="date" name="published_date" required>
+        <button type="submit">Add Book</button>
+    </form>
+
+    <h2>All Books</h2>
+    <ul>
+        {% for book in books %}
+            <li>
+                <strong>{{ book.title }}</strong> by {{ book.author }} 
+                (ISBN: {{ book.isbn }}) - Published: {{ book.published_date }}
+                <a href="{% url 'update_book' book.id %}">Edit</a>
+                <a href="{% url 'delete_book' book.id %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
