@@ -75,24 +75,24 @@ library_management/
 
 ✅ Assumptions
 
-Admins manage books (CRUD operations).
+•	Admins manage books (CRUD operations).
 
-Students can only view books.
+•	Students can only view books.
 
-User authentication is required for admin access.
+•	User authentication is required for admin access.
+
 
 
 Future Improvements:
 
-Add student authentication & borrowing system.
+•	Add student authentication & borrowing system.
 
-Implement book search and filters.
+•	Implement book search and filters.
 
-Improve UI/UX with Bootstrap or TailwindCSS.
+•	Improve UI/UX with Bootstrap or TailwindCSS.
 
 
 License:
 
-This project is open-source under the MIT License.
-
+•	This project is open-source under the MIT License.
 
