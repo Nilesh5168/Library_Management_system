@@ -2,102 +2,151 @@
 
 A web-based Library Management System built using Django with MySQL as the database. The system allows admins to manage books (add, update, delete) and students to view available books.
 
-Features:
+Overview
 
-•	Admin Authentication (Login/Logout)
+This is a Library Management System built using Django (Backend) and React (Frontend). It allows:
 
-•	Admin Dashboard (Manage Books)
+Students to view books.
 
-•	Book Management (CRUD operations)
+Admins to add, update, and delete books.
 
-•	Student View (View available books)
-
-•	MySQL Database Integration
-
-•	Responsive UI
+Authentication for admin users.
 
 
-Setup Instructions:
+🔧 Tech Stack
 
-1)Install Dependencies
+Backend: Django, Django REST Framework (DRF)
 
-•	pip install django mysqlclient
+Frontend: React, React Router
 
-2) Configure MySQL Database
-   
-  1.	Open MySQL Workbench or any MySQL client.
-     
-  2.	Create a new database:     CREATE DATABASE library_db;
-     
-3) Apply Migrations(Run following commands)
-   
-•	python manage.py makemigrations
+Database: SQLite / PostgreSQL
 
-•	python manage.py migrate
-
-5) Create Superuser (Admin)
-   
-•	python manage.py createsuperuser
-
-7) Run the Server
-   
-•	python manage.py runserver
-
-8)Clone the Repository
-
-•	git clone https://github.com/Nilesh5168/Library_Management_system.git
-
-•	cd Library_Management_system
+Authentication: Token-based authentication
 
 
-📁 Project Structure
+🚀 Setup Instructions
 
-library_management/
+1️⃣ Backend Setup (Django)
 
-│── library_app/         # Django App (Models, Views, Templates)
+📌 Install Dependencies
 
-│   ├── migrations/      # Database Migrations
+pip install -r requirements.txt
 
-│   ├── templates/       # HTML Templates
+📌 Apply Migrations
 
-│   ├── static/          # CSS & JS files
+python manage.py migrate
 
-│   ├── views.py         # Business Logic
+📌 Run Server
 
-│   ├── models.py        # Database Models
+python manage.py runserver
 
-│   ├── urls.py          # URL Routing
-
-│── library_management/  # Main Project Folder
-
-│   ├── settings.py      # Django Settings
-
-│   ├── urls.py          # Project URL Configuration
-
-│── manage.py            # Django CLI
-
-│── README.md            # Project Documentation
-
-✅ Assumptions
-
-•	Admins manage books (CRUD operations).
-
-•	Students can only view books.
-
-•	User authentication is required for admin access.
+Backend will run at http://127.0.0.1:8000/
 
 
+2️⃣ Frontend Setup (React)
 
-Future Improvements:
+📌 Install Dependencies
 
-•	Add student authentication & borrowing system.
+npm install
 
-•	Implement book search and filters.
+📌 Start Development Server
 
-•	Improve UI/UX with Bootstrap or TailwindCSS.
+npm start
+
+Frontend will run at http://localhost:3000/
 
 
-License:
+📚 API Endpoints
 
-•	This project is open-source under the MIT License.
+🔹 Authentication
 
+✅ Register Admin
+
+POST /api/register/
+
+{
+  "username": "admin1",
+  "email": "admin@example.com",
+  "password": "securepass"
+}
+
+✅ Admin Login
+
+POST /api/login/
+
+{
+  "username": "admin1",
+  "password": "securepass"
+}
+
+✅ Admin Logout
+
+POST /api/logout/
+
+
+🔹 Books Management
+
+📌 Get All Books (No Authentication Required)
+
+GET /api/books/
+
+📌 Add Book (Admin Only)
+
+POST /api/books/
+
+{
+  "title": "Book Title",
+  "author": "Author Name",
+  "isbn": "123456789",
+  "published_date": "2025-03-19"
+}
+
+📌 Update Book (Admin Only)
+
+PUT /api/books/{book_id}/
+
+{
+  "title": "Updated Title",
+  "author": "Updated Author"
+}
+
+📌 Delete Book (Admin Only)
+
+DELETE /api/books/{book_id}/
+
+
+🎨 Frontend Features
+
+📌 Navbar
+
+Displays Student View for students.
+
+Changes to Admin View after admin login.
+
+📌 Home Page
+
+Displays the list of books (accessible to everyone).
+
+📌 Dashboard (Admin Only)
+
+Allows admins to add, update, and delete books.
+
+Automatically refreshes the book list after modifications.
+
+
+🔥 Future Improvements
+
+✅ Add user roles & permissions.
+
+✅ Improve UI/UX with better styling.
+
+✅ Implement JWT authentication.
+
+
+🛠 Maintainers
+
+Developer:Nilesh Patil
+
+Contact: nileshpatil5168@gmail.com
+
+Happy Coding! 🚀📚
